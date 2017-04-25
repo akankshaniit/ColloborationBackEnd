@@ -1,0 +1,86 @@
+package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.niit.collaboration.dao.JobApplicationDAO;
+import com.niit.collaboration.model.JobApplication;
+
+@Repository("jobApplicationDAO")
+@Transactional
+public class JobApplicationDAOImpl implements JobApplicationDAO {
+
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	private static Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
+	
+	
+	public JobApplication get(String id) {
+		JobApplication jobApplication=(JobApplication) sessionFactory.openSession().load("JobApplication.class", id);
+		return jobApplication;
+	}
+
+	public List<JobApplication> list() {
+		
+		return sessionFactory.openSession().createQuery("from JobApplication").list();
+	}
+
+	public boolean save(JobApplication jobApplication) {
+		try {
+			Session session= sessionFactory.openSession();
+			session.save(jobApplication);
+			session.flush();
+			session.close();
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public boolean update(JobApplication jobApplication) {
+		try {
+			Session session= sessionFactory.openSession();
+			session.update(jobApplication);
+			session.flush();
+			session.close();
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public boolean delete(String id) {
+		log.debug("Starting of the method delete of jobApplication");
+		log.debug("Trying to delte the record : " + id);
+		try
+		{
+		
+		sessionFactory.openSession().delete(get(id));
+		log.debug("successfully delted the record of jobApplication :" + id);
+		}catch(Exception e)
+		{
+			log.debug("record does not exist with the id " + id);
+			return false;
+			
+		}
+		log.debug("Ending of the method delete  record of jobApplication");
+		return true;
+	}
+
+	
+}

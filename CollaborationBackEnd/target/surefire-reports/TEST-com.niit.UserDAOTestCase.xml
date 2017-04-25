@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="com.niit.UserDAOTestCase" time="0.16" errors="1" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
+    <property name="java.vm.version" value="25.121-b13"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\project2\CollaborationBackEnd"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\project2\CollaborationBackEnd"/>
+    <property name="java.runtime.version" value="1.8.0_121-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.io.tmpdir" value="C:\Users\akanksha\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="D:\project2\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf3631652598878408483.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/client;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/i386;C:\oraclexe\app\oracle\product\11.2.0\server\bin;;%M2%;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Users\akanksha\Downloads\Compressed\eclipse-jee-neon-2-win32_2\eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\akanksha"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="akanksha"/>
+    <property name="java.class.path" value="/C:/Users/akanksha/Downloads/Compressed/eclipse-jee-neon-2-win32_2/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_121"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_121\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="D:\project2\CollaborationBackEnd\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+  </properties>
+  <testcase classname="com.niit.UserDAOTestCase" name="com.niit.UserDAOTestCase" time="0.16">
+    <error message="Error creating bean with name &apos;blogDAO&apos;: Unsatisfied dependency expressed through field &apos;sessionFactory&apos;; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;sessionFactory&apos; defined in com.niit.collaboration.config.ApplicationContextConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method &apos;getSessionFactory&apos; threw exception; nested exception is org.hibernate.MappingException: Could not determine type for: org.springframework.web.multipart.MultipartFile, at table: c_event, for columns: [org.hibernate.mapping.Column(image)]" type="org.springframework.beans.factory.UnsatisfiedDependencyException">org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name &apos;blogDAO&apos;: Unsatisfied dependency expressed through field &apos;sessionFactory&apos;; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;sessionFactory&apos; defined in com.niit.collaboration.config.ApplicationContextConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method &apos;getSessionFactory&apos; threw exception; nested exception is org.hibernate.MappingException: Could not determine type for: org.springframework.web.multipart.MultipartFile, at table: c_event, for columns: [org.hibernate.mapping.Column(image)]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:751)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+	at com.niit.UserDAOTestCase.init(UserDAOTestCase.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;sessionFactory&apos; defined in com.niit.collaboration.config.ApplicationContextConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method &apos;getSessionFactory&apos; threw exception; nested exception is org.hibernate.MappingException: Could not determine type for: org.springframework.web.multipart.MultipartFile, at table: c_event, for columns: [org.hibernate.mapping.Column(image)]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1128)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1023)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1128)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1056)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
+	... 34 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method &apos;getSessionFactory&apos; threw exception; nested exception is org.hibernate.MappingException: Could not determine type for: org.springframework.web.multipart.MultipartFile, at table: c_event, for columns: [org.hibernate.mapping.Column(image)]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 46 more
+Caused by: org.hibernate.MappingException: Could not determine type for: org.springframework.web.multipart.MultipartFile, at table: c_event, for columns: [org.hibernate.mapping.Column(image)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349)
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322)
+	at org.hibernate.mapping.Property.isValid(Property.java:241)
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:372)
+	at com.niit.collaboration.config.ApplicationContextConfig.getSessionFactory(ApplicationContextConfig.java:80)
+	at com.niit.collaboration.config.ApplicationContextConfig$$EnhancerBySpringCGLIB$$d2704954.CGLIB$getSessionFactory$1(&lt;generated&gt;)
+	at com.niit.collaboration.config.ApplicationContextConfig$$EnhancerBySpringCGLIB$$d2704954$$FastClassBySpringCGLIB$$311e679b.invoke(&lt;generated&gt;)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:356)
+	at com.niit.collaboration.config.ApplicationContextConfig$$EnhancerBySpringCGLIB$$d2704954.getSessionFactory(&lt;generated&gt;)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 47 more
+</error>
+    <system-out>13:37:15.461 [main] DEBUG com.niit.collaboration.config.ApplicationContextConfig - Starting of the method getOracleDataSource
+13:37:15.461 [main] DEBUG com.niit.collaboration.config.ApplicationContextConfig - Setting the data source :{hibernate.formate_sql=true, hibernate.dialect=org.hibernate.dialect.Oracle10gDialect, hibernate.show_sql=true, hibernate.hbm2ddl.auto=update}
+13:37:15.461 [main] DEBUG com.niit.collaboration.config.ApplicationContextConfig - Ending of the method getOracleDataSource
+13:37:15.461 [main] DEBUG com.niit.collaboration.config.ApplicationContextConfig - Starting of the method getSessionFactory
+13:37:15.461 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -&gt; org.hibernate.type.BooleanType@f5f7f
+13:37:15.461 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -&gt; org.hibernate.type.BooleanType@f5f7f
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Boolean -&gt; org.hibernate.type.BooleanType@f5f7f
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration numeric_boolean -&gt; org.hibernate.type.NumericBooleanType@7f66c4
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration true_false -&gt; org.hibernate.type.TrueFalseType@16bcf94
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration yes_no -&gt; org.hibernate.type.YesNoType@1e5f259
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte -&gt; org.hibernate.type.ByteType@f57048
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte -&gt; org.hibernate.type.ByteType@f57048
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Byte -&gt; org.hibernate.type.ByteType@f57048
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration character -&gt; org.hibernate.type.CharacterType@17da279
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration char -&gt; org.hibernate.type.CharacterType@17da279
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Character -&gt; org.hibernate.type.CharacterType@17da279
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration short -&gt; org.hibernate.type.ShortType@253c26
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration short -&gt; org.hibernate.type.ShortType@253c26
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Short -&gt; org.hibernate.type.ShortType@253c26
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration integer -&gt; org.hibernate.type.IntegerType@1e69659
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration int -&gt; org.hibernate.type.IntegerType@1e69659
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Integer -&gt; org.hibernate.type.IntegerType@1e69659
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration long -&gt; org.hibernate.type.LongType@1d9a273
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration long -&gt; org.hibernate.type.LongType@1d9a273
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Long -&gt; org.hibernate.type.LongType@1d9a273
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration float -&gt; org.hibernate.type.FloatType@1909a3
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration float -&gt; org.hibernate.type.FloatType@1909a3
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Float -&gt; org.hibernate.type.FloatType@1909a3
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration double -&gt; org.hibernate.type.DoubleType@1d61f98
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration double -&gt; org.hibernate.type.DoubleType@1d61f98
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Double -&gt; org.hibernate.type.DoubleType@1d61f98
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration big_decimal -&gt; org.hibernate.type.BigDecimalType@b1beb6
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigDecimal -&gt; org.hibernate.type.BigDecimalType@b1beb6
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration big_integer -&gt; org.hibernate.type.BigIntegerType@1e9cf30
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigInteger -&gt; org.hibernate.type.BigIntegerType@1e9cf30
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration string -&gt; org.hibernate.type.StringType@127942a
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.String -&gt; org.hibernate.type.StringType@127942a
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration nstring -&gt; org.hibernate.type.StringNVarcharType@180542f
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration ncharacter -&gt; org.hibernate.type.CharacterNCharType@16d5deb
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration url -&gt; org.hibernate.type.UrlType@38c7fe
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.net.URL -&gt; org.hibernate.type.UrlType@38c7fe
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration date -&gt; org.hibernate.type.DateType@136aa0c
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Date -&gt; org.hibernate.type.DateType@136aa0c
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration time -&gt; org.hibernate.type.TimeType@9c6181
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Time -&gt; org.hibernate.type.TimeType@9c6181
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration timestamp -&gt; org.hibernate.type.TimestampType@350b40
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Timestamp -&gt; org.hibernate.type.TimestampType@350b40
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Date -&gt; org.hibernate.type.TimestampType@350b40
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration dbtimestamp -&gt; org.hibernate.type.DbTimestampType@140e5f0
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration calendar -&gt; org.hibernate.type.CalendarType@1a5b54
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Calendar -&gt; org.hibernate.type.CalendarType@1a5b54
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -&gt; org.hibernate.type.CalendarType@1a5b54
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration calendar_date -&gt; org.hibernate.type.CalendarDateType@140db9
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration locale -&gt; org.hibernate.type.LocaleType@1a147cc
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Locale -&gt; org.hibernate.type.LocaleType@1a147cc
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration currency -&gt; org.hibernate.type.CurrencyType@145bad8
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Currency -&gt; org.hibernate.type.CurrencyType@145bad8
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration timezone -&gt; org.hibernate.type.TimeZoneType@10e2b97
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.TimeZone -&gt; org.hibernate.type.TimeZoneType@10e2b97
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration class -&gt; org.hibernate.type.ClassType@7f1f10
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Class -&gt; org.hibernate.type.ClassType@7f1f10
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-binary -&gt; org.hibernate.type.UUIDBinaryType@c5a2ff
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.UUID -&gt; org.hibernate.type.UUIDBinaryType@c5a2ff
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-char -&gt; org.hibernate.type.UUIDCharType@1392934
+13:37:15.466 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration pg-uuid -&gt; org.hibernate.type.PostgresUUIDType@1fe15ff
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration binary -&gt; org.hibernate.type.BinaryType@9175d8
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration byte[] -&gt; org.hibernate.type.BinaryType@9175d8
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [B -&gt; org.hibernate.type.BinaryType@9175d8
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-binary -&gt; org.hibernate.type.WrapperBinaryType@10734c3
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration Byte[] -&gt; org.hibernate.type.WrapperBinaryType@10734c3
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -&gt; org.hibernate.type.WrapperBinaryType@10734c3
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration image -&gt; org.hibernate.type.ImageType@1ce9dc4
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration characters -&gt; org.hibernate.type.CharArrayType@af004b
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration char[] -&gt; org.hibernate.type.CharArrayType@af004b
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [C -&gt; org.hibernate.type.CharArrayType@af004b
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-characters -&gt; org.hibernate.type.CharacterArrayType@3295b0
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -&gt; org.hibernate.type.CharacterArrayType@3295b0
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration Character[] -&gt; org.hibernate.type.CharacterArrayType@3295b0
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration text -&gt; org.hibernate.type.TextType@10fe47a
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration ntext -&gt; org.hibernate.type.NTextType@34b64c
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration blob -&gt; org.hibernate.type.BlobType@60d6e9
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Blob -&gt; org.hibernate.type.BlobType@60d6e9
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_blob -&gt; org.hibernate.type.MaterializedBlobType@1349883
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration clob -&gt; org.hibernate.type.ClobType@af0677
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Clob -&gt; org.hibernate.type.ClobType@af0677
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration nclob -&gt; org.hibernate.type.NClobType@150fbeb
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.NClob -&gt; org.hibernate.type.NClobType@150fbeb
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob -&gt; org.hibernate.type.MaterializedClobType@9a5ed8
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob -&gt; org.hibernate.type.MaterializedNClobType@90e879
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration serializable -&gt; org.hibernate.type.SerializableType@3ec003
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration object -&gt; org.hibernate.type.ObjectType@188af83
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Object -&gt; org.hibernate.type.ObjectType@188af83
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_date -&gt; org.hibernate.type.AdaptedImmutableType@10db97e
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_time -&gt; org.hibernate.type.AdaptedImmutableType@10628de
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_timestamp -&gt; org.hibernate.type.AdaptedImmutableType@1abf088
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_dbtimestamp -&gt; org.hibernate.type.AdaptedImmutableType@392345
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar -&gt; org.hibernate.type.AdaptedImmutableType@f3afb5
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar_date -&gt; org.hibernate.type.AdaptedImmutableType@ed35ed
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_binary -&gt; org.hibernate.type.AdaptedImmutableType@22a348
+13:37:15.471 [main] DEBUG org.hibernate.type.BasicTypeRegistry - Adding type registration imm_serializable -&gt; org.hibernate.type.AdaptedImmutableType@1d69e82
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid2] -&gt; [org.hibernate.id.UUIDGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [guid] -&gt; [org.hibernate.id.GUIDGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid] -&gt; [org.hibernate.id.UUIDHexGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid.hex] -&gt; [org.hibernate.id.UUIDHexGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [hilo] -&gt; [org.hibernate.id.TableHiLoGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [assigned] -&gt; [org.hibernate.id.Assigned]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [identity] -&gt; [org.hibernate.id.IdentityGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [select] -&gt; [org.hibernate.id.SelectGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence] -&gt; [org.hibernate.id.SequenceGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [seqhilo] -&gt; [org.hibernate.id.SequenceHiLoGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [increment] -&gt; [org.hibernate.id.IncrementGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [foreign] -&gt; [org.hibernate.id.ForeignGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence-identity] -&gt; [org.hibernate.id.SequenceIdentityGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-sequence] -&gt; [org.hibernate.id.enhanced.SequenceStyleGenerator]
+13:37:15.471 [main] DEBUG org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-table] -&gt; [org.hibernate.id.enhanced.TableGenerator]
+13:37:15.471 [main] DEBUG com.niit.collaboration.config.ApplicationContextConfig - Ending of the method getSessionFactory
+13:37:15.471 [main] DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+13:37:15.471 [main] DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+13:37:15.471 [main] DEBUG org.hibernate.integrator.internal.IntegratorServiceImpl - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+13:37:15.471 [main] DEBUG org.hibernate.boot.registry.selector.internal.StrategySelectorImpl - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5] -&gt; [org.hibernate.dialect.MySQL5Dialect] (replacing [org.hibernate.dialect.MySQL5Dialect])
+13:37:15.476 [main] DEBUG org.hibernate.boot.registry.selector.internal.StrategySelectorImpl - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5InnoDB] -&gt; [org.hibernate.dialect.MySQL5InnoDBDialect] (replacing [org.hibernate.dialect.MySQL5InnoDBDialect])
+13:37:15.476 [main] DEBUG org.hibernate.service.spi.ServiceBinding - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+13:37:15.476 [main] DEBUG org.hibernate.cfg.Configuration - Preparing to build session factory with filters : {}
+13:37:15.506 [main] DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl - Database -&gt;
+       name : Oracle
+    version : Oracle Database 11g Express Edition Release 11.2.0.2.0 - Production
+      major : 11
+      minor : 2
+13:37:15.506 [main] DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl - Driver -&gt;
+       name : Oracle JDBC driver
+    version : 11.1.0.7.0-Production
+      major : 11
+      minor : 1
+13:37:15.506 [main] DEBUG org.hibernate.engine.jdbc.internal.JdbcServicesImpl - JDBC version : 11.1
+13:37:15.506 [main] DEBUG org.hibernate.engine.jdbc.cursor.internal.StandardRefCursorSupport - Unexpected error trying to gauge level of JDBC REF_CURSOR support : null
+13:37:15.511 [main] INFO org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Configuration - Processing hbm.xml files
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Configuration - Process annotated classes
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.niit.collaboration.model.User
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Import with entity name User
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Bind entity com.niit.collaboration.model.User on table c_userdetails
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_userdetails), mappingColumn=id, insertable=true, updatable=true, unique=false}
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.User:id]
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for id
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property id
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_userdetails), mappingColumn=address, insertable=true, updatable=true, unique=false}
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property address with lazy=false
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.User:address]
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for address
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property address
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_userdetails), mappingColumn=mobile, insertable=true, updatable=true, unique=false}
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property mobile with lazy=false
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.User:mobile]
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for mobile
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property mobile
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_userdetails), mappingColumn=name, insertable=true, updatable=true, unique=false}
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property name with lazy=false
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.User:name]
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for name
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property name
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_userdetails), mappingColumn=password, insertable=true, updatable=true, unique=false}
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property password with lazy=false
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.User:password]
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for password
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property password
+13:37:15.511 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_userdetails), mappingColumn=role, insertable=true, updatable=true, unique=false}
+13:37:15.511 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property role with lazy=false
+13:37:15.511 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.User:role]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for role
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property role
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.niit.collaboration.model.Blog
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Import with entity name Blog
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Bind entity com.niit.collaboration.model.Blog on table c_blog
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_blog), mappingColumn=id, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Blog:id]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_blog), mappingColumn=dateTime, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property dateTime with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Blog:dateTime]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for dateTime
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property dateTime
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_blog), mappingColumn=description, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property description with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Blog:description]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for description
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property description
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_blog), mappingColumn=reason, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property reason with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Blog:reason]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for reason
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property reason
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_blog), mappingColumn=status, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property status with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Blog:status]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for status
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property status
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_blog), mappingColumn=title, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property title with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Blog:title]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for title
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property title
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_blog), mappingColumn=user_id, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property user_id with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Blog:user_id]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for user_id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property user_id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.niit.collaboration.model.Job
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Import with entity name Job
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Bind entity com.niit.collaboration.model.Job on table c_job
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_job), mappingColumn=id, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Job:id]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_job), mappingColumn=date_Time, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property date_Time with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Job:date_Time]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for date_Time
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property date_Time
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_job), mappingColumn=description, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property description with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Job:description]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for description
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property description
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_job), mappingColumn=qualification, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property qualification with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Job:qualification]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for qualification
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property qualification
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_job), mappingColumn=status, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property status with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Job:status]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for status
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property status
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_job), mappingColumn=title, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property title with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Job:title]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for title
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property title
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.niit.collaboration.model.Friend
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Import with entity name Friend
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Bind entity com.niit.collaboration.model.Friend on table C_Friend
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(C_Friend), mappingColumn=id, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Friend:id]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property id
+13:37:15.516 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(C_Friend), mappingColumn=friend_id, insertable=true, updatable=true, unique=false}
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property friend_id with lazy=false
+13:37:15.516 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Friend:friend_id]
+13:37:15.516 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for friend_id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property friend_id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(C_Friend), mappingColumn=isonline, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property isOnline with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Friend:isOnline]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for isOnline
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property isOnline
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(C_Friend), mappingColumn=last_seen, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property lastSeenTime with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Friend:lastSeenTime]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for lastSeenTime
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property lastSeenTime
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(C_Friend), mappingColumn=status, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property status with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Friend:status]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for status
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property status
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(C_Friend), mappingColumn=user_id, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property user_id with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Friend:user_id]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for user_id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property user_id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.niit.collaboration.model.JobApplication
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Import with entity name JobApplication
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Bind entity com.niit.collaboration.model.JobApplication on table c_jobapplication
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_jobapplication), mappingColumn=id, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.JobApplication:id]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_jobapplication), mappingColumn=dateApplied, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property dateApplied with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.JobApplication:dateApplied]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for dateApplied
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property dateApplied
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_jobapplication), mappingColumn=job_id, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property jobid with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.JobApplication:jobid]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for jobid
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property jobid
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_jobapplication), mappingColumn=remark, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property remark with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.JobApplication:remark]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for remark
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property remark
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_jobapplication), mappingColumn=status, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property status with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.JobApplication:status]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for status
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property status
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_jobapplication), mappingColumn=user_id, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property userid with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.JobApplication:userid]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for userid
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property userid
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.niit.collaboration.model.Event
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Import with entity name Event
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Bind entity com.niit.collaboration.model.Event on table c_event
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_event), mappingColumn=id, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Event:id]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property id
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_event), mappingColumn=date_time, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property dateTime with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Event:dateTime]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for dateTime
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property dateTime
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_event), mappingColumn=description, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property description with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Event:description]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for description
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property description
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_event), mappingColumn=image, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property image with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Event:image]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for image
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property image
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_event), mappingColumn=name, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property name with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Event:name]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for name
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property name
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_event), mappingColumn=venue, insertable=true, updatable=true, unique=false}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property venue with lazy=false
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.Event:venue]
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for venue
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property venue
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: com.niit.collaboration.model.ChatForumComment
+13:37:15.521 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+13:37:15.521 [main] DEBUG org.hibernate.cfg.AnnotationBinder - No value specified for &apos;javax.persistence.sharedCache.mode&apos;; using UNSPECIFIED
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Import with entity name ChatForumComment
+13:37:15.521 [main] DEBUG org.hibernate.cfg.annotations.EntityBinder - Bind entity com.niit.collaboration.model.ChatForumComment on table c_chatforum
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_chatforum), mappingColumn=id, insertable=true, updatable=true, unique=false}
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property id with lazy=false
+13:37:15.526 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.ChatForumComment:id]
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_chatforum), mappingColumn=commented_date, insertable=true, updatable=true, unique=false}
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property commentedDate with lazy=false
+13:37:15.526 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.ChatForumComment:commentedDate]
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for commentedDate
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property commentedDate
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_chatforum), mappingColumn=forum_id, insertable=true, updatable=true, unique=false}
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property forum_id with lazy=false
+13:37:15.526 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.ChatForumComment:forum_id]
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for forum_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property forum_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_chatforum), mappingColumn=message, insertable=true, updatable=true, unique=false}
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property message with lazy=false
+13:37:15.526 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.ChatForumComment:message]
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for message
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property message
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(c_chatforum), mappingColumn=user_id, insertable=true, updatable=true, unique=false}
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - MetadataSourceProcessor property user_id with lazy=false
+13:37:15.526 [main] DEBUG org.hibernate.cfg.AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.niit.collaboration.model.ChatForumComment:user_id]
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - building SimpleValue for user_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.PropertyBinder - Building property user_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for address
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for mobile
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for name
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for password
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for role
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for dateTime
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for description
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for reason
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for status
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for title
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for user_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for date_Time
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for description
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for qualification
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for status
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for title
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for friend_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for isOnline
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for lastSeenTime
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for status
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for user_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for dateApplied
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for jobid
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for remark
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for status
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for userid
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for dateTime
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for description
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for image
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for name
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for venue
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for commentedDate
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for forum_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for message
+13:37:15.526 [main] DEBUG org.hibernate.cfg.annotations.SimpleValueBinder - Starting fillSimpleValue for user_id
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Processing fk mappings (*ToOne and JoinedSubclass)
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Processing extends queue
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Processing collection mappings
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Processing native query and ResultSetMapping mappings
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Processing association property references
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Creating tables&apos; unique integer identifiers
+13:37:15.526 [main] DEBUG org.hibernate.cfg.Configuration - Processing foreign key constraints
+</system-out>
+    <system-err>Apr 25, 2017 1:37:15 PM org.springframework.context.annotation.AnnotationConfigApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1bc9f97: startup date [Tue Apr 25 13:37:15 IST 2017]; root of context hierarchy
+Apr 25, 2017 1:37:15 PM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+INFO: Loaded JDBC driver: oracle.jdbc.driver.OracleDriver
+Apr 25, 2017 1:37:15 PM org.springframework.context.annotation.AnnotationConfigApplicationContext refresh
+WARNING: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name &apos;blogDAO&apos;: Unsatisfied dependency expressed through field &apos;sessionFactory&apos;; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;sessionFactory&apos; defined in com.niit.collaboration.config.ApplicationContextConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.hibernate.SessionFactory]: Factory method &apos;getSessionFactory&apos; threw exception; nested exception is org.hibernate.MappingException: Could not determine type for: org.springframework.web.multipart.MultipartFile, at table: c_event, for columns: [org.hibernate.mapping.Column(image)]
+</system-err>
+  </testcase>
+</testsuite>

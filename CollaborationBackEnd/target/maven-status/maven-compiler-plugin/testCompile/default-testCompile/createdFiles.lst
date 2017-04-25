@@ -1,0 +1,8 @@
+com\niit\JobDAOTestCase.class
+com\niit\EventDAOTestCase.class
+com\niit\ChatForumTestCase.class
+com\niit\UserDAOTestCase.class
+com\niit\JobApplicationTestCase.class
+com\niit\ChatDAOTestCase.class
+com\niit\BlogDAOTestCase.class
+com\niit\FriendDAOTestCase.class
