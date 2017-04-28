@@ -38,11 +38,12 @@ public class ChatDAOTestCase {
 	@Test
 	public void createChatTestCase()
 	{
-		chat.setId("C001");
-		chat.setUser_id("U001");
-		chat.setMessage("Hiiiii");
+		chat.setId("C002");
+		chat.setUser_id("U007");
+		chat.setMessage("Hiiiii how are u??");
 		chat.setFriend_id("F001");
 		chat.setDateTime(null);
+		chat.setCommented_date(null);
 		
 		boolean flag=chatDAO.save(chat);
 		assertEquals("createChatTestCase",true,flag);
@@ -54,9 +55,9 @@ public class ChatDAOTestCase {
 		chat.setId("C001");
 		chat.setUser_id("U001");
 		chat.setMessage("Hiiiii");
-		chat.setFriend_id("F002");
+		chat.setFriend_id("F008");
 		chat.setDateTime(null);
-		
+		chat.setCommented_date(null);
 		boolean flag=chatDAO.update(chat);
 		assertEquals("updateChatTestCase",true,flag);
 	}
@@ -72,7 +73,7 @@ public class ChatDAOTestCase {
 	public void getAllChatTestCase()
 	{
 		int size=chatDAO.list().size();
-		assertEquals("getAllUserTestCase",1,size);
+		assertEquals("getAllUserTestCase",2,size);
 	}
 	
 }

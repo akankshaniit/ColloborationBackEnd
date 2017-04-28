@@ -19,15 +19,15 @@ import com.niit.collaboration.model.Chat;
 @Transactional
 public class ChatDAOImpl implements ChatDAO {
 
-private static Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
+private static Logger log = LoggerFactory.getLogger(ChatDAOImpl.class);
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
+	
 	public Chat get(String id) {
-		Chat chat = (Chat) sessionFactory.openSession().load("Chat.class", id);
-		return chat;
+		return (Chat) sessionFactory.openSession().get(Chat.class, id);
+		
 	}
 
 	@Override

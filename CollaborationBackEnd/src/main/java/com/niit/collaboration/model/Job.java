@@ -1,6 +1,8 @@
 package com.niit.collaboration.model;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +22,7 @@ public class Job extends BaseDomain {
 	private String title;
 	private String description;
 	@Column
-	private Date date_Time;
+	private Date date_time;
 	private String qualification;
 	private char status;     //V=vacant, C=closed
 	
@@ -55,11 +57,11 @@ public class Job extends BaseDomain {
 	public void setStatus(char status) {
 		this.status = status;
 	}
-	public Date getDate_Time() {
-		return date_Time;
+	public Date getDate_time() {
+		return date_time;
 	}
 	public void setDate_Time(Date date_Time) {
-		this.date_Time = date_Time;
+		this.date_time = new Date();
 	}
 	
 	

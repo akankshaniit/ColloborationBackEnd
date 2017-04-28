@@ -39,8 +39,8 @@ public class JobDAOTestCase {
 	@Test
 	public void createJobTestCase()
 	{
-		job.setId("J001");
-		job.setTitle("IT Vacancy");
+		job.setId("J002");
+		job.setTitle("IT Vacancy for Fresher");
 		job.setDescription("Apply Here ");
 		job.setStatus('V');
 		job.setQualification("BTech Engg");
@@ -54,10 +54,10 @@ public class JobDAOTestCase {
 	public void updateJobTestCase()
 	{
 		job.setId("J001");
-		job.setTitle("IT Vacancy");
-		job.setDescription("Apply Here ");
+		job.setTitle("IT and Comp Vacancy");
+		job.setDescription("Apply Here... ");
 		job.setStatus('C');
-		job.setQualification("BTech Engg");
+		job.setQualification("BTech Engg only");
 		job.setDate_Time(null);
 		
 		boolean flag=jobDAO.update(job);
@@ -75,6 +75,6 @@ public class JobDAOTestCase {
 	public void getAllJobTestCase()
 	{
 		int size=jobDAO.list().size();
-		assertEquals("getAllJobTestCase",1,size);
+		assertEquals("getAllJobTestCase",2,size);
 	}
 }

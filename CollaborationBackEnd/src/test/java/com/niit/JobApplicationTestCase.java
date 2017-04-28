@@ -36,13 +36,13 @@ public class JobApplicationTestCase {
 		
 	}
 	
-	//@Test
+	@Test
 	public void createJobAppTestCase()
 	{
-		jobApplication.setId("001");
-		jobApplication.setJobid("J002");
+		jobApplication.setId("002");
+		jobApplication.setJobid("J006");
 		jobApplication.setUserid("U003");
-		jobApplication.setRemark("W");
+		jobApplication.setStatus('W');
 		jobApplication.setRemark("Waiting");
 		jobApplication.setDateApplied(null);
 		
@@ -50,14 +50,14 @@ public class JobApplicationTestCase {
 		assertEquals("createJobAppTestCase",true,flag);
 	}
 	
-	//@Test
+	@Test
 	public void updateJobAppTestCase()
 	{
 		jobApplication.setId("001");
-		jobApplication.setJobid("J002");
-		jobApplication.setUserid("U003");
-		jobApplication.setRemark("A");
-		jobApplication.setRemark("Accepted");
+		jobApplication.setJobid("J004");
+		jobApplication.setUserid("U005");
+		jobApplication.setStatus('R');
+		jobApplication.setRemark("Rejected");
 		jobApplication.setDateApplied(null);
 		
 		boolean flag= jobApplicationDAO.update(jobApplication);
@@ -75,7 +75,7 @@ public class JobApplicationTestCase {
 	public void getAllJobAppTestCase()
 	{
 		int size=jobApplicationDAO.list().size();
-		assertEquals("getAllJobAppTestCase",1,size);
+		assertEquals("getAllJobAppTestCase",2,size);
 	}
 	
 	

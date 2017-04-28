@@ -23,18 +23,19 @@ public class FriendDAOImpl implements FriendDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	private static Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
-	
+	private static Logger log = LoggerFactory.getLogger(FriendDAOImpl.class);
+	private static Logger log1 = LoggerFactory.getLogger(Friend.class);
 	@Override
 	public Friend get(String id) {
-Session session=	(Session) sessionFactory.openSession().load("Friend.class", id);
-		return null;
+    Friend friend=	(Friend) sessionFactory.openSession().get(Friend.class, id);
+		return friend;
 	}
-
 	@Override
 	public List<Friend> list() {
-		
-		return sessionFactory.openSession().createQuery("from Friend").list();
+		System.out.println("hiii");
+		List<Friend> lt=(List<Friend>)sessionFactory.openSession().createQuery("from Friend").list();
+		System.out.println(lt);
+		return lt;
 	}
 
 	@Override

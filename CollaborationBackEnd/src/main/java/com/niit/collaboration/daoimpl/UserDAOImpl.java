@@ -29,7 +29,7 @@ public class UserDAOImpl implements UserDAO {
 	
 	
 	public User get(String id) {
-		User user= (User)sessionFactory.openSession().load(User.class, id);
+		User user= (User)sessionFactory.openSession().get(User.class, id);
 		return user;
 	}
 
@@ -89,6 +89,7 @@ public class UserDAOImpl implements UserDAO {
 	public boolean delete(String id) {
 		log.debug("Starting of the method delete");
 		log.debug("Trying to delte the record : " + id);
+		
 		try
 		{
 		

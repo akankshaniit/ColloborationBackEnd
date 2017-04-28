@@ -24,7 +24,7 @@ public class Blog extends BaseDomain {
 	private String user_id;
 	
 	@Column
-	private Date dateTime;
+	private Date date_time;
 	@Column
 	private char status;
 	@Column
@@ -33,11 +33,11 @@ public class Blog extends BaseDomain {
 	private String description;
 	
 	
-	public Date getDateTime() {
-		return dateTime;
+	public Date getDate_Time() {
+		return date_time;
 	}
-	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
+	public void setDateTime(Date date_time) {
+		this.date_time = date_time;
 	}
 	public String getId() {
 		return id;

@@ -36,13 +36,13 @@ public class FriendDAOTestCase {
 		
 	}
 	
-	//@Test
+	@Test
 	public void createFriendTestCase()
 	{
-		friend.setId("F002");
-		friend.setUser_id("U005");
+		friend.setId("F006");
+		friend.setUser_id("U008");
 		friend.setStatus('N');
-		friend.setFriend_id("F009");
+		friend.setFriend_id("F007");
 		friend.setIsOnline('O');
 		friend.setLastSeenTime(null);
 		
@@ -50,14 +50,14 @@ public class FriendDAOTestCase {
 		assertEquals("createFriendTestCase",true,flag);
 	}
 	
-	//@Test
+	@Test
 	public void updateFriendTestCase()
 	{
 		friend.setId("F001");
 		friend.setUser_id("U002");
 		friend.setStatus('N');
 		friend.setFriend_id("F002");
-		friend.setIsOnline('O');
+		friend.setIsOnline('D');
 		friend.setLastSeenTime(null);
 		
 		boolean flag=friendDAO.update(friend);
@@ -72,11 +72,11 @@ public class FriendDAOTestCase {
 		assertEquals("getFriendTestCase", null,friend);
 	}
 	
-	//@Test
+	@Test
 	public void getAllFirendTestCase()
 	{
 		int size=friendDAO.list().size();
-		assertEquals("getAllFriendTestCase",1,size);
+		assertEquals("getAllFriendTestCase",5,size);
 	}
 	
 	

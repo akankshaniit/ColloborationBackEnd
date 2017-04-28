@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.collaboration.dao.BlogDAO;
-import com.niit.collaboration.dao.UserDAO;
+
 import com.niit.collaboration.model.Blog;
-import com.niit.collaboration.model.User;
+
 
 public class BlogDAOTestCase {
 

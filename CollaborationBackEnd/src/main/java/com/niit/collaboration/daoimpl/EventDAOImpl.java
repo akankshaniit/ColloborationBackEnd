@@ -30,7 +30,7 @@ public class EventDAOImpl implements EventDAO {
 	private SessionFactory sessionFactory;
 	
 	public Event get(String id) {
-		Event event=(Event) sessionFactory.openSession().load("Event.class", id);
+		Event event=(Event) sessionFactory.openSession().get(Event.class, id);
 		return event;
 	}
 

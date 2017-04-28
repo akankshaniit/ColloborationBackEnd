@@ -51,13 +51,13 @@ public class UserDAOTestCase {
 	@Test
 	public void createUserTestCase()
 	{
-		user.setId("U002");
-		user.setName("Niyati");
-		user.setPassword("niyu");
+		user.setId("U004");
+		user.setName("Shivani");
+		user.setPassword("Shiv");
 		user.setRole("student");
-		user.setAddress("Mahad");
+		user.setAddress("Alibag");
 		
-		user.setMobile("8554016664");
+		user.setMobile("9988776655");
 		
 		boolean flag= userDAO.save(user);
 		assertEquals("createUserTestCase", true, flag);
@@ -66,8 +66,8 @@ public class UserDAOTestCase {
 	@Test
 	public void updateTestCase()
 	{
-		user.setId("U001");
-		user.setName("Sahar");
+		user.setId("U002");
+		user.setName("Akash");
 		user.setPassword("Akku");
 		user.setRole("student");
 		user.setAddress("Old-Panvel");
@@ -89,7 +89,7 @@ public class UserDAOTestCase {
 	public void getAllUserTestCase()
 	{
 		int size=userDAO.list().size();
-		assertEquals("getAllUserTestCase",2,size);
+		assertEquals("getAllUserTestCase",4,size);
 	}
 	
 	

@@ -1,5 +1,7 @@
 package com.niit.collaboration.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 @Table(name="c_chatforum")
-public class ChatForumComment {
+public class ChatForumComment extends BaseDomain {
 
 	@Id
 	@Column
@@ -22,7 +24,7 @@ public class ChatForumComment {
 	@Column
 	private String message;
 	@Column(name="commented_date")
-	private String commentedDate;
+	private Date commentedDate;
 	public String getId() {
 		return id;
 	}
@@ -47,11 +49,12 @@ public class ChatForumComment {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public String getCommentedDate() {
+	public Date getCommentedDate() {
 		return commentedDate;
 	}
-	public void setCommentedDate(String commentedDate) {
-		this.commentedDate = commentedDate;
+	public void setCommentedDate(Date commentedDate) {
+		this.commentedDate = new Date();
 	}
+	
 	
 }

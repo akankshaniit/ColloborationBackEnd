@@ -1,6 +1,8 @@
 package com.niit.collaboration.model;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +22,7 @@ public class JobApplication extends BaseDomain {
 	private String userid;
 	@Column(name="job_id")
 	private String jobid;
+	@Column(name="date_applied")
 	private Date dateApplied;
 	private String remark;
 	private char status;     //s=select,r=reject,c=call for interview
@@ -45,7 +48,7 @@ public class JobApplication extends BaseDomain {
 		return dateApplied;
 	}
 	public void setDateApplied(Date dateApplied) {
-		this.dateApplied = dateApplied;
+		this.dateApplied = new Date();
 	}
 	public String getRemark() {
 		return remark;

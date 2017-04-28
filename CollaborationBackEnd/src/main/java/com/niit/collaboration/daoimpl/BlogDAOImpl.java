@@ -21,7 +21,7 @@ import com.niit.collaboration.model.Blog;
 public class BlogDAOImpl implements BlogDAO {
 
 	
-	private static Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
+	private static Logger log = LoggerFactory.getLogger(BlogDAOImpl.class);
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -29,7 +29,7 @@ public class BlogDAOImpl implements BlogDAO {
 	
 	
 	public Blog get(String id) {
-	Blog blog=	(Blog) sessionFactory.openSession().load(Blog.class, id);
+	Blog blog=	(Blog) sessionFactory.openSession().get(Blog.class, id);
 		return blog;
 	}
 

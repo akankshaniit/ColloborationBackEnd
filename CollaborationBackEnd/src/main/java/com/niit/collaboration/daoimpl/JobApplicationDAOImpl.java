@@ -23,11 +23,11 @@ public class JobApplicationDAOImpl implements JobApplicationDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	private static Logger log = LoggerFactory.getLogger(UserDAOImpl.class);
+	private static Logger log = LoggerFactory.getLogger(JobApplicationDAOImpl.class);
 	
 	
 	public JobApplication get(String id) {
-		JobApplication jobApplication=(JobApplication) sessionFactory.openSession().load("JobApplication.class", id);
+		JobApplication jobApplication=(JobApplication) sessionFactory.openSession().get(JobApplication.class, id);
 		return jobApplication;
 	}
 

@@ -1,7 +1,7 @@
 package com.niit.collaboration.model;
 
-import java.sql.Clob;
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,22 +20,22 @@ public class Event extends BaseDomain{
 	private String id;
 	private String name;
 	private String venue;
-	private Clob description;     //character oriented large object
+	private String description;     //character oriented large object
 	@Column(name="date_time")
 	private Date dateTime;
 	
 	//private Blob image;         //binary oriented large object
-	private MultipartFile image;
+	//private MultipartFile image;
 		
 	
 	
-	public MultipartFile getImage() {
+/*	public MultipartFile getImage() {
 		return image;
 	}
 
 	public void setImage(MultipartFile image) {
 		this.image = image;
-	}
+	}*/
 
 	public String getId() {
 		return id;
@@ -61,11 +61,12 @@ public class Event extends BaseDomain{
 		this.venue = venue;
 	}
 
-	public Clob getDescription() {
+	
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(Clob description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
@@ -74,7 +75,7 @@ public class Event extends BaseDomain{
 	}
 
 	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
+		this.dateTime = new Date();
 	}
 
 	

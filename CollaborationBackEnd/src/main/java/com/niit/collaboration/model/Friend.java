@@ -1,6 +1,8 @@
 package com.niit.collaboration.model;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="C_Friend")
+@Table(name="c_friend")
 public class Friend extends BaseDomain {
 
 	@Id
@@ -22,7 +24,7 @@ public class Friend extends BaseDomain {
 	private String friend_id;
 	//new,accepted,rejected
 	@Column
-	private char status;
+	private Character status;
 	@Column(name="isonline")
 	private char isOnline;
 	@Column(name="last_seen")
@@ -48,10 +50,10 @@ public class Friend extends BaseDomain {
 		this.friend_id = friend_id;
 	}
 	
-	public char getStatus() {
+	public Character getStatus() {
 		return status;
 	}
-	public void setStatus(char status) {
+	public void setStatus(Character status) {
 		this.status = status;
 	}
 	public char getIsOnline() {
@@ -64,7 +66,7 @@ public class Friend extends BaseDomain {
 		return lastSeenTime;
 	}
 	public void setLastSeenTime(Date lastSeenTime) {
-		this.lastSeenTime = lastSeenTime;
+		this.lastSeenTime = new Date();
 	}
 	
 	

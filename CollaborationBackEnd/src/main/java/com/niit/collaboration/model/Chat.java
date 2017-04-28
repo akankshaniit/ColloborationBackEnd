@@ -2,7 +2,9 @@ package com.niit.collaboration.model;
 
 
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="C_CHAT")
+@Table(name="c_chat")
 public class Chat extends BaseDomain {
 
 	@Id
@@ -27,8 +29,8 @@ public class Chat extends BaseDomain {
 	private Date dateTime;
 	@Column
 	private String message;
-	@Column
-	private Date commentedDate;
+	@Column(name="comment_date")
+	private Date commented_date;
 	
 	
 	
@@ -56,13 +58,19 @@ public class Chat extends BaseDomain {
 		return dateTime;
 	}
 	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
+		this.dateTime = new Date();
 	}
 	public String getMessage() {
 		return message;
 	}
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	public Date getCommented_date() {
+		return commented_date;
+	}
+	public void setCommented_date(Date commented_date) {
+		this.commented_date = new Date();
 	}
 	
 	

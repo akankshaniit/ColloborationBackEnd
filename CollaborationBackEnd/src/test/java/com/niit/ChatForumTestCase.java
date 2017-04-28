@@ -41,11 +41,11 @@ public class ChatForumTestCase {
 	@Test
    public void createChatForumTestCase()
 	{
-		chatForumComment.setId("CF001");
-		chatForumComment.setUser_id("U001");
-		chatForumComment.setMessage("inside ChatForum ");
+		chatForumComment.setId("CF002");
+		chatForumComment.setUser_id("U004");
+		chatForumComment.setMessage("inside ChatForum... ");
 		chatForumComment.setCommentedDate(null);
-		chatForumComment.setForum_id("FO001");
+		chatForumComment.setForum_id("FO005");
 		
 		boolean flag =chatForumCommentDAO.save(chatForumComment);
 		assertEquals("createChatForumTestCase",true,flag);

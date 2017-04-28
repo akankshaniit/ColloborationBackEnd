@@ -1,6 +1,12 @@
 package com.niit;
 
 import static org.junit.Assert.assertEquals;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
+import java.sql.Clob;
+import java.sql.SQLException;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -40,10 +46,13 @@ public class EventDAOTestCase {
 	@Test
 	public void createEventTestCase()
 	{
-		event.setId("E001");
-		event.setName("Job Fairwell");
-		event.setVenue("old panvel");
-		event.setImage(null);
+		event.setId("E002");
+		event.setName("Job Fairwell for Placement");
+		event.setVenue("Mumbai");
+		//event.setImage(null);
+		
+		event.setDescription("here Description");
+		event.setDateTime(null);
 		
 		boolean flag= eventDAO.save(event);
 		assertEquals("createEventTestCase",true,flag);
@@ -54,10 +63,11 @@ public class EventDAOTestCase {
 	public void updateEventTestCase()
 	{
 		event.setId("E001");
-		event.setName("Job Fairwell");
-		event.setVenue("new panvel");
-		event.setImage(null);
-		
+		event.setName("Job Fairwell for placement.");
+		event.setVenue("new panvel.");
+		//event.setImage(null);
+		event.setDescription("description");
+		event.setDateTime(null);
 
 		boolean flag= eventDAO.update(event);
 		assertEquals("createEventTestCase",true,flag);
@@ -77,7 +87,7 @@ public class EventDAOTestCase {
 	public void getAllUserTestCase()
 	{
 		int size=eventDAO.list().size();
-		assertEquals("getAllEventTestCase",1,size);
+		assertEquals("getAllEventTestCase",2,size);
 	}
 		
 	
