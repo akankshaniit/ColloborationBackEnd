@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.collaboration.dao.JobDAO;
 import com.niit.collaboration.model.Job;
+import com.niit.collaboration.model.JobApplication;
 
 
 @Repository("jobDAO")
@@ -80,6 +81,62 @@ public class JobDAOImpl implements JobDAO {
 		}
 		log.debug("Ending of the method delete of job");
 		return true;
+	}
+
+	@Override
+	public boolean save(JobApplication jobApplication) {
+		try {
+			Session session=sessionFactory.openSession();
+			session.save(jobApplication);
+			session.flush();
+			session.close();
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+	@Override
+	public boolean updateJob(JobApplication jobApplication) {
+		try {
+			Session session=sessionFactory.openSession();
+			session.update(jobApplication);
+			session.flush();
+			session.close();
+			return true;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+	public JobApplication getJobApplication(String id) {
+		JobApplication jobApplication= (JobApplication) sessionFactory.openSession().load("JobApplication.class", id);
+		return jobApplication;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Job> getMyAppliedJobs(String userID) {
+		return	(List<Job>) sessionFactory.openSession().createQuery("select * from JobApplication where User_id=?");
+	
+	}
+
+	@Override
+	public JobApplication getJobApplication(String userID, String jobID) {
+		
+	return	(JobApplication) sessionFactory.openSession().createQuery("select * from JobApplication where user_id = ? and job_id=?");
+	}
+
+	@Override
+	public List<Job> getAllOpendJobs() {
+		
+		return sessionFactory.openSession().createQuery("from Job where status='V'").list();
 	}
 
 }

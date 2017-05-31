@@ -39,49 +39,51 @@ public class UserDAOTestCase {
 		
 	}
 	
-	@Test
+	
+	//@Test
 	public void validateCredentialTestCase()
 	{
-		boolean flag= userDAO.isValidate("U001", "Akku");
+		 User user= userDAO.isValidate("U001", "Akku");
 		
-		Assert.assertEquals("validateCredentialTestCase", true,flag);
+		Assert.assertEquals("validateCredentialTestCase", true,user);
 		
 	}
 	
 	@Test
 	public void createUserTestCase()
 	{
-		user.setId("U004");
-		user.setName("Shivani");
-		user.setPassword("Shiv");
-		user.setRole("student");
-		user.setAddress("Alibag");
-		
-		user.setMobile("9988776655");
-		
+		user.setId("003");
+		user.setName("Sahar");
+		user.setPassword("sahar123");
+		user.setRole("Admin");
+		user.setAddress("Old-Panvel");
+		user.setEmail("sahar@yahoo.com");
+		user.setMobile("9766553412");
+		user.setIsOnline('O');
 		boolean flag= userDAO.save(user);
 		assertEquals("createUserTestCase", true, flag);
 	}
 	
-	@Test
+	//@Test
 	public void updateTestCase()
 	{
-		user.setId("U002");
+		user.setId("002");
 		user.setName("Akash");
-		user.setPassword("Akku");
-		user.setRole("student");
+		user.setPassword("123456");
+		user.setRole("Student");
 		user.setAddress("Old-Panvel");
-		
-		user.setMobile("9922120878");
+		user.setEmail("Akash@yahoo.com");
+		user.setMobile("9955126546");
+		user.setIsOnline('O');
 		
 		boolean flag= userDAO.update(user);
 		assertEquals("createUserTestCase", true, flag);
 	}
 	
-	@Test
+//	@Test
 	public void getUserTestCase()
 	{
-		user= userDAO.get("U009");
+		user= userDAO.get("9");
 		assertEquals("getUserTestCase", null,user);
 	}
 	
@@ -89,7 +91,7 @@ public class UserDAOTestCase {
 	public void getAllUserTestCase()
 	{
 		int size=userDAO.list().size();
-		assertEquals("getAllUserTestCase",4,size);
+		assertEquals("getAllUserTestCase",3,size);
 	}
 	
 	

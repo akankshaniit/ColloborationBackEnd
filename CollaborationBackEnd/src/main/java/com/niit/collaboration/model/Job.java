@@ -24,6 +24,7 @@ public class Job extends BaseDomain {
 	@Column
 	private Date date_time;
 	private String qualification;
+	//Admin S->Select; R->Reject; C->Call For Inerview
 	private char status;     //V=vacant, C=closed
 	
 	public String getId() {

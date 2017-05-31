@@ -37,25 +37,38 @@ public class UserDAOImpl implements UserDAO {
 		return sessionFactory.openSession().createQuery("from User").list();
 	}
 
-	public boolean isValidate(String id, String password) {
-		Query query=sessionFactory.openSession().createQuery("from User where id=? and password=?");
-		query.setString(0,id);
-		query.setString(1,password);
-		if(query.uniqueResult() ==null)
-		{
-			return false;
+	public User isValidate(String email, String password) {
+		log.debug("->->Starting of the method isValidUserDetails");
+		String hql = "from User where email= '" + email + "' and " + " password ='" + password+"'";
+		
+		log.debug("Query is : "+hql);
+		
+		Query query = sessionFactory.openSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) query.list();
+		
+		if (list != null && !list.isEmpty()) {
+			User u=(User) list.get(0);
+			log.debug("Got:"+u.getName());
+			return u;
 		}
-		else
-		{
-		return true;
-		}
+		
+		return null;
+	
 		
 	}
 
 	public boolean save(User user) {
 		try
 		{
+			
 			Session session =sessionFactory.openSession();
+			int newidno =session.createQuery("from User").list().size() +1;
+			String id ="U"+newidno;
+			user.setId(id);
+			
+			
 			session.save(user);
 			session.flush();
 			session.close();
@@ -104,5 +117,41 @@ public class UserDAOImpl implements UserDAO {
 		log.debug("Ending of the method delete");
 		return true;
 	}
+
+	@Override
+	public List<User> notMyFriendList(String loggedInUserID) {
+		// TODO Auto-generated method stub
+		return sessionFactory.openSession().createQuery("from User").list();
+	}
+
+	@Override
+	public User getEmail(String email) {
+		
+		return (User) sessionFactory.openSession().createQuery("from User where email='"+email+"'").uniqueResult();
+	}
+
+	@Override
+	public void setOnline(String userID) {
+		log.debug("Starting of the metnod setOnline");
+		String hql =" UPDATE User	SET isOnline = 'Y' where id='" +  userID + "'" ;
+		  log.debug("hql: " + hql);
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		query.executeUpdate();
+		log.debug("Ending of the metnod setOnline");
+		
+	}
+
+	@Override
+	public void setOffLine(String userID) {
+		log.debug("Starting of the metnod setOffLine");
+		String hql =" UPDATE User	SET isOnline = 'N' where id='" +  userID + "'" ;
+		  log.debug("hql: " + hql);
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		query.executeUpdate();
+		log.debug("Ending of the metnod setOffLine");
+		
+	}
+
+	
 
 }

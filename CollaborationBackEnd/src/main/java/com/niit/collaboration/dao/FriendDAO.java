@@ -7,7 +7,9 @@ import com.niit.collaboration.model.Friend;
 
 public interface FriendDAO {
 
-public Friend get(String id);
+
+public Friend get(String friendID);
+
 	
 	public List<Friend> list();
 	
@@ -16,4 +18,17 @@ public Friend get(String id);
 	public boolean save(Friend friend);
 	public boolean update(Friend friend);
 	public boolean delete(String id);
+	public void delete(String userID, String friendID);
+	
+	public List<Friend> getMyFriends(String userID);
+	
+	public Friend get(String userID, String friendID);
+	
+	public List<Friend> getNewFriendRequests(String userID);
+	public void setOnline(String userID);
+	public void setOffLine(String userID);
+	public List<Friend> getRequestsSendByMe(String userID);
+	
+
+	
 }

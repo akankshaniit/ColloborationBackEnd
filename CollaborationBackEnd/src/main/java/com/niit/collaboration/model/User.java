@@ -1,6 +1,8 @@
 package com.niit.collaboration.model;
 
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,13 +26,42 @@ private String name;
 private String password;
 @Column
 private String role;
-
+@Column
+private String email;
 @Column
 private String address;
 
 @Column
 private String mobile;
 
+@Column
+private char  isOnline;
+
+
+@Column(name = "LAST_SEEN_TIME")
+private Date lastSeenTime;
+
+
+
+
+public Date getLastSeenTime() {
+	return lastSeenTime;
+}
+public void setLastSeenTime(Date lastSeenTime) {
+	this.lastSeenTime = lastSeenTime;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public char getIsOnline() {
+	return isOnline;
+}
+public void setIsOnline(char isOnline) {
+	this.isOnline = isOnline;
+}
 
 
 

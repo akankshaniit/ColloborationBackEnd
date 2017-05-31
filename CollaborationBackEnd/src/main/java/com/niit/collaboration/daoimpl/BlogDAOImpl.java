@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.collaboration.dao.BlogDAO;
 import com.niit.collaboration.model.Blog;
+import com.niit.collaboration.model.User;
 
 
 @Repository("blogDAO")
@@ -26,7 +27,8 @@ public class BlogDAOImpl implements BlogDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	
+	@Autowired
+	private User user;
 	
 	public Blog get(String id) {
 	Blog blog=	(Blog) sessionFactory.openSession().get(Blog.class, id);
@@ -42,6 +44,13 @@ public class BlogDAOImpl implements BlogDAO {
 		
 		try {
 			Session session=sessionFactory.openSession();
+			int newidno1 =session.createQuery("from Blog").list().size() +1;
+			String id1 ="B"+newidno1;
+			blog.setId(id1);
+		
+			//blog.setUser_id(user.getId());
+			System.out.println("UserID:"+user.getId());
+			
 			session.save(blog);
 			session.flush();
 			session.close();
