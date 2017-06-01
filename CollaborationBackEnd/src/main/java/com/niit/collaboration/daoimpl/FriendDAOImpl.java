@@ -46,12 +46,14 @@ log.debug(userID);
 	@Override
 	public boolean save(Friend friend) {
 		try {
+			
 			Session session=sessionFactory.openSession();
 			int newidno2 =session.createQuery("from Friend").list().size() +1;
 			String id ="F"+newidno2;
 			friend.setId(id);
 			
 			session.save(friend);
+			
 			session.flush();
 			session.close();
 			return true;
@@ -112,11 +114,11 @@ log.debug(userID);
 		 * status ='A' MINUS select user_id from c_friend where
 		 * user_id='Srinivas';
 		 */
-		String hql1 = "select friend_id  from Friend where user_id='" + userID + "' and status = 'A' ";
+		String hql1 = " from Friend where user_id='" + userID + "' and status = 'A' ";
 
 				/*+ " union  " +*/
 
-		String hql2= "select user_id from Friend where friend_id='" + userID + "' and status = 'A'";
+		String hql2= " from Friend where friend_id='" + userID + "' and status = 'A'";
 
 		log.debug("getMyFriends hql1 : " + hql1);
 		log.debug("getMyFriends hql2 : " + hql2);
@@ -140,7 +142,7 @@ log.debug(userID);
 	}
 	@Override
 	public List<Friend> getNewFriendRequests(String userID) {
-		String hql = "from Friend where user_id=" + "'" + userID + "' and status ='" + "N'";
+		String hql = "from Friend where friend_id=" + "'" + userID + "' and status ='" + "N'";
 
 		log.debug(hql);
 		 return  sessionFactory.openSession().createQuery(hql).list();
