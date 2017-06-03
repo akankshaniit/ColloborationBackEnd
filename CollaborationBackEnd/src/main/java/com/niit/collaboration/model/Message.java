@@ -5,8 +5,8 @@ public class Message {
 
 	private String message;
 
-	private long id;
-	public Message(Long id, String message) {
+	private String id;
+	public Message(String id, String message) {
 		this.id = id;
 		this.message = message;
 	}
@@ -21,11 +21,11 @@ public class Message {
 		this.message = message;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
