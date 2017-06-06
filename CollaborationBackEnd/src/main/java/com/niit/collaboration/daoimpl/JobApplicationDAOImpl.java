@@ -35,6 +35,10 @@ public class JobApplicationDAOImpl implements JobApplicationDAO {
 		
 		return sessionFactory.openSession().createQuery("from JobApplication").list();
 	}
+public List<JobApplication> appliedlist(String userid) {
+		
+		return sessionFactory.openSession().createQuery("from JobApplication where user_id='"+ userid+"'").list();
+	}
 
 	public boolean save(JobApplication jobApplication) {
 		try {

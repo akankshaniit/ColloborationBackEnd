@@ -1,5 +1,6 @@
 package com.niit.collaboration.daoimpl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -37,7 +38,7 @@ public class BlogDAOImpl implements BlogDAO {
 
 	public List<Blog> list() {
 		
-		return sessionFactory.openSession().createQuery("from Blog").list();
+		return sessionFactory.openSession().createQuery("from Blog where status!='R'").list();
 	}
 
 	public boolean save(Blog blog) {
@@ -50,7 +51,7 @@ public class BlogDAOImpl implements BlogDAO {
 		
 			//blog.setUser_id(user.getId());
 			System.out.println("UserID:"+user.getId());
-			
+			blog.setDate_time(new Date(System.currentTimeMillis()));
 			session.save(blog);
 			session.flush();
 			session.close();
@@ -65,6 +66,7 @@ public class BlogDAOImpl implements BlogDAO {
 	public boolean update(Blog blog) {
 		try {
 			Session session=sessionFactory.openSession();
+			
 			session.update(blog);
 			session.flush();
 			session.close();
@@ -78,7 +80,7 @@ public class BlogDAOImpl implements BlogDAO {
 
 	public boolean delete(String id) {
 		log.debug("Starting of the method delete");
-		log.debug("Trying to delte the record : " + id);
+		log.debug("Trying to delete the record : " + id);
 		try {
 			sessionFactory.openSession().delete(get(id));
 			log.debug("successfully delted the record :" + id);

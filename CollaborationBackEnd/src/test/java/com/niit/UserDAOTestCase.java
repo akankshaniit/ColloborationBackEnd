@@ -52,12 +52,12 @@ public class UserDAOTestCase {
 	@Test
 	public void createUserTestCase()
 	{
-		user.setId("003");
-		user.setName("Sahar");
-		user.setPassword("sahar123");
+		user.setId("A1");
+		user.setName("Pratima");
+		user.setPassword("p1234");
 		user.setRole("Admin");
 		user.setAddress("Old-Panvel");
-		user.setEmail("sahar@yahoo.com");
+		user.setEmail("pratima@gmail.com");
 		user.setMobile("9766553412");
 		user.setIsOnline('O');
 		boolean flag= userDAO.save(user);
@@ -87,7 +87,7 @@ public class UserDAOTestCase {
 		assertEquals("getUserTestCase", null,user);
 	}
 	
-	@Test
+	//@Test
 	public void getAllUserTestCase()
 	{
 		int size=userDAO.list().size();

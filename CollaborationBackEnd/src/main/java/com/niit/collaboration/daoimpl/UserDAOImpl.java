@@ -107,7 +107,7 @@ public class UserDAOImpl implements UserDAO {
 		{
 		
 		sessionFactory.openSession().delete(get(id));
-		log.debug("successfully delted the record :" + id);
+		log.debug("successfully deleted the record :" + id);
 		}catch(Exception e)
 		{
 			log.debug("record does not exist with the id " + id);

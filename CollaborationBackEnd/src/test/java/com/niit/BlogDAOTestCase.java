@@ -45,7 +45,7 @@ public class BlogDAOTestCase {
 		blog.setStatus('A');
 		blog.setDescription("stay Connected with Me");
 		blog.setReason("Connection Checking In Free time");
-		blog.setDateTime(null);
+		blog.setDate_time(null);
 		
 		boolean flag=blogDAO.save(blog);
 		assertEquals("createBlogTestCase",true,flag);

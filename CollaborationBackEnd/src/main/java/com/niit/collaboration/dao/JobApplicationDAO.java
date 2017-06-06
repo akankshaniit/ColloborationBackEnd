@@ -11,7 +11,7 @@ public interface JobApplicationDAO {
 public JobApplication get(String id);
 	
 	public List<JobApplication> list();
-	
+	public List<JobApplication> appliedlist(String userid);
 	
 	
 	public boolean save(JobApplication jobapplication);

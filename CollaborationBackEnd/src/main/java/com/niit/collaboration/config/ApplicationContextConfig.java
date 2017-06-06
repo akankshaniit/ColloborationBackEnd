@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.collaboration.model.Blog;
 import com.niit.collaboration.model.Chat;
-import com.niit.collaboration.model.ChatForumComment;
+
 import com.niit.collaboration.model.Event;
 import com.niit.collaboration.model.Friend;
 import com.niit.collaboration.model.Job;
@@ -68,6 +68,7 @@ public class ApplicationContextConfig {
 		connectionProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
        
 		sessionBuilder.addProperties(connectionProperties);
+		sessionBuilder.scanPackages("com.niit");
 		sessionBuilder.addAnnotatedClass(User.class);
         sessionBuilder.addAnnotatedClass(Blog.class);
         sessionBuilder.addAnnotatedClass(Job.class);
@@ -75,7 +76,7 @@ public class ApplicationContextConfig {
         sessionBuilder.addAnnotatedClass(JobApplication.class);
         sessionBuilder.addAnnotatedClass(Event.class);
         sessionBuilder.addAnnotatedClass(Chat.class);
-        sessionBuilder.addAnnotatedClass(ChatForumComment.class);
+       // sessionBuilder.addAnnotatedClass(ChatForumComment.class);
 		// sessionBuilder.addAnnotatedClass(User.class);
 
 		logger.debug("Ending of the method getSessionFactory");

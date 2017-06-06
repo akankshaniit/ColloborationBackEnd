@@ -40,8 +40,8 @@ public class JobApplicationTestCase {
 	public void createJobAppTestCase()
 	{
 		jobApplication.setId("002");
-		jobApplication.setJobid("J006");
-		jobApplication.setUserid("U003");
+		jobApplication.setJob_id("J006");
+		jobApplication.setUser_id("U003");
 		jobApplication.setStatus('W');
 		jobApplication.setRemark("Waiting");
 		jobApplication.setDateApplied(null);
@@ -54,8 +54,8 @@ public class JobApplicationTestCase {
 	public void updateJobAppTestCase()
 	{
 		jobApplication.setId("001");
-		jobApplication.setJobid("J004");
-		jobApplication.setUserid("U005");
+		jobApplication.setJob_id("J004");
+		jobApplication.setUser_id("U005");
 		jobApplication.setStatus('R');
 		jobApplication.setRemark("Rejected");
 		jobApplication.setDateApplied(null);

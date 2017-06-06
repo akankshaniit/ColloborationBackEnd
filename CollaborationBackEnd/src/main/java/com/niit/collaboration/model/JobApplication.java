@@ -19,9 +19,9 @@ public class JobApplication extends BaseDomain {
 	@Id
 	private String id;
 	@Column(name="user_id")
-	private String userid;
+	private String user_id;
 	@Column(name="job_id")
-	private String jobid;
+	private String job_id;
 	@Column(name="date_applied")
 	private Date dateApplied;
 	private String remark;
@@ -32,17 +32,19 @@ public class JobApplication extends BaseDomain {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getUserid() {
-		return userid;
+	
+	
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public String getJobid() {
-		return jobid;
+	public String getJob_id() {
+		return job_id;
 	}
-	public void setJobid(String jobid) {
-		this.jobid = jobid;
+	public void setJob_id(String job_id) {
+		this.job_id = job_id;
 	}
 	public Date getDateApplied() {
 		return dateApplied;

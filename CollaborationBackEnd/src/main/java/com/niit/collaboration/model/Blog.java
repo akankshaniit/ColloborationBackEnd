@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,6 +26,7 @@ public class Blog extends BaseDomain {
 	private String user_id;
 	
 	@Column
+	@DateTimeFormat(pattern = "dd MMM, yyyy HH:mm:ss")
 	private Date date_time;
 	@Column
 	private char status;
@@ -34,10 +36,10 @@ public class Blog extends BaseDomain {
 	private String description;
 	
 	
-	public Date getDate_Time() {
+	public Date getDate_time() {
 		return date_time;
 	}
-	public void setDateTime(Date date_time) {
+	public void setDate_time(Date date_time) {
 		this.date_time = date_time;
 	}
 	public String getId() {

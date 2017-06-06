@@ -1,5 +1,6 @@
 package com.niit.collaboration.daoimpl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -34,12 +35,24 @@ public class JobDAOImpl implements JobDAO {
 
 	public List<Job> list() {
 		
-		return sessionFactory.openSession().createQuery("from Job").list();
+		return sessionFactory.openSession().createQuery("from Job where status='V'").list();
 	}
+	
+	@Override
+	public List<Job> appliedlist(String jobid) {
+		return sessionFactory.openSession().createQuery("from Job where id='"+ jobid+"'").list();
+	}
+
 
 	public boolean save(Job job) {
 		try {
 			Session session=sessionFactory.openSession();
+			int newidno3 =session.createQuery("from Job").list().size() +1;
+			String id3 ="J"+newidno3;
+			job.setId(id3);
+			
+			job.setStatus('V');
+			job.setDate_Time(new Date());
 			session.save(job);
 			session.flush();
 			session.close();
@@ -54,6 +67,7 @@ public class JobDAOImpl implements JobDAO {
 	public boolean update(Job job) {
 		try {
 			Session session=sessionFactory.openSession();
+			job.setStatus('C');
 			session.update(job);
 			session.flush();
 			session.close();
@@ -87,6 +101,11 @@ public class JobDAOImpl implements JobDAO {
 	public boolean save(JobApplication jobApplication) {
 		try {
 			Session session=sessionFactory.openSession();
+			
+			int newidno1 =session.createQuery("from JobApplication").list().size() +1;
+			String id1 ="JA"+newidno1;
+			jobApplication.setId(id1);
+			
 			session.save(jobApplication);
 			session.flush();
 			session.close();
@@ -123,14 +142,19 @@ public class JobDAOImpl implements JobDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Job> getMyAppliedJobs(String userID) {
-		return	(List<Job>) sessionFactory.openSession().createQuery("select * from JobApplication where User_id=?");
+		return	(List<Job>) sessionFactory.openSession().createQuery(" from JobApplication where user_id=?");
 	
 	}
 
 	@Override
 	public JobApplication getJobApplication(String userID, String jobID) {
 		
-	return	(JobApplication) sessionFactory.openSession().createQuery("select * from JobApplication where user_id = ? and job_id=?");
+	List<JobApplication> list=  sessionFactory.openSession().createQuery("from JobApplication where user_id = '"+userID+"' and job_id='"+jobID+"'").list();
+	if(list.isEmpty())
+		return null;
+	else
+		return list.get(0);
+	
 	}
 
 	@Override
@@ -139,4 +163,5 @@ public class JobDAOImpl implements JobDAO {
 		return sessionFactory.openSession().createQuery("from Job where status='V'").list();
 	}
 
+	
 }

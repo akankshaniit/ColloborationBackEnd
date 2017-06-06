@@ -7,9 +7,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * @author akanksha
+ *
+ */
 @Component
 @Entity
 @Table(name="c_userdetails")
@@ -35,9 +40,20 @@ private String address;
 private String mobile;
 
 @Column
+@Transient
+private String status;
+
+
+@Column
 private char  isOnline;
 
 
+public String getStatus() {
+	return status;
+}
+public void setStatus(String status) {
+	this.status = status;
+}
 @Column(name = "LAST_SEEN_TIME")
 private Date lastSeenTime;
 

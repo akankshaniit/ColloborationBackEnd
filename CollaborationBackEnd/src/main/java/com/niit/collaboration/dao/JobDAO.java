@@ -11,6 +11,7 @@ public interface JobDAO {
 public Job get(String id);
 	
 	public List<Job> list();
+	public List<Job> appliedlist(String jobid);
 	 
 	public List <Job> getAllOpendJobs();
 	
