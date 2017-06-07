@@ -32,7 +32,9 @@ public class BlogDAOImpl implements BlogDAO {
 	private User user;
 	
 	public Blog get(String id) {
+		log.debug("Starting get method");
 	Blog blog=	(Blog) sessionFactory.openSession().get(Blog.class, id);
+	log.debug("Ending get method"+blog);
 		return blog;
 	}
 
@@ -78,11 +80,15 @@ public class BlogDAOImpl implements BlogDAO {
 		}
 	}
 
+	
 	public boolean delete(String id) {
 		log.debug("Starting of the method delete");
 		log.debug("Trying to delete the record : " + id);
 		try {
-			sessionFactory.openSession().delete(get(id));
+			Session session=sessionFactory.openSession();
+			session.delete(get(id));
+			session.flush();
+			session.close();
 			log.debug("successfully delted the record :" + id);
 		} catch (HibernateException e) {
 			log.debug("record does not exist with the id " + id);

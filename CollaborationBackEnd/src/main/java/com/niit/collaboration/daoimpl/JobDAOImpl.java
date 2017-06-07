@@ -67,7 +67,7 @@ public class JobDAOImpl implements JobDAO {
 	public boolean update(Job job) {
 		try {
 			Session session=sessionFactory.openSession();
-			job.setStatus('C');
+			
 			session.update(job);
 			session.flush();
 			session.close();
