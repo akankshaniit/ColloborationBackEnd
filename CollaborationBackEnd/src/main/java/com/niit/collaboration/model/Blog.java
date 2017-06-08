@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
@@ -27,12 +28,15 @@ public class Blog extends BaseDomain {
 	
 	@Column
 	@DateTimeFormat(pattern = "dd MMM, yyyy HH:mm:ss")
+	
 	private Date date_time;
+	@Column(nullable=true, name="status")
+    private Character status;
 	@Column
-	private char status;
-	@Column
+	
 	private String reason;
 	@Column
+	
 	private String description;
 	
 	
@@ -60,10 +64,12 @@ public class Blog extends BaseDomain {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	public char getStatus() {
+	
+	
+	public Character getStatus() {
 		return status;
 	}
-	public void setStatus(char status) {
+	public void setStatus(Character status) {
 		this.status = status;
 	}
 	public String getReason() {

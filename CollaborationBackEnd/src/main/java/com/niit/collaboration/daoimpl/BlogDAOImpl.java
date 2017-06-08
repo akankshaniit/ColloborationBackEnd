@@ -54,6 +54,7 @@ public class BlogDAOImpl implements BlogDAO {
 			//blog.setUser_id(user.getId());
 			System.out.println("UserID:"+user.getId());
 			blog.setDate_time(new Date(System.currentTimeMillis()));
+			blog.setStatus('A');
 			session.save(blog);
 			session.flush();
 			session.close();
