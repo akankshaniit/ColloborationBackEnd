@@ -43,23 +43,23 @@ public class UserDAOTestCase {
 	//@Test
 	public void validateCredentialTestCase()
 	{
-		 User user= userDAO.isValidate("U001", "Akku");
+		 User user= userDAO.isValidate("akku@gmail.com", "akku123");
 		
 		Assert.assertEquals("validateCredentialTestCase", true,user);
 		
 	}
 	
-	@Test
+//	@Test
 	public void createUserTestCase()
 	{
-		user.setId("A1");
-		user.setName("Pratima");
-		user.setPassword("p1234");
-		user.setRole("Admin");
+		user.setId("U12");
+		user.setName("Asha");
+		user.setPassword("asha");
+		user.setRole("student");
 		user.setAddress("Old-Panvel");
-		user.setEmail("pratima@gmail.com");
+		user.setEmail("asha@gmail.com");
 		user.setMobile("9766553412");
-		user.setIsOnline('O');
+		user.setIsOnline('N');
 		boolean flag= userDAO.save(user);
 		assertEquals("createUserTestCase", true, flag);
 	}

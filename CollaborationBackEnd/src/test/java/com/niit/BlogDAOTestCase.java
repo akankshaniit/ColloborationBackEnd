@@ -36,30 +36,30 @@ public class BlogDAOTestCase {
 	}
 	
 	
-	@Test
+	//@Test
 	public void createBlogTestCase()
 	{
-		blog.setId("B003");
-		blog.setTitle("FriendsChat");
-		blog.setUser_id("U006");
+		blog.setId("B7");
+		blog.setTitle("Silent Group");
+		blog.setUser_id("U4");
 		blog.setStatus('A');
 		blog.setDescription("stay Connected with Me");
-		blog.setReason("Connection Checking In Free time");
+		blog.setReason("");
 		blog.setDate_time(null);
 		
 		boolean flag=blogDAO.save(blog);
 		assertEquals("createBlogTestCase",true,flag);
 	}
 	
-	@Test
+	//@Test
 	public void updateBlogTestCase()
 	{
-		blog.setId("B001");
+		blog.setId("B4");
 		blog.setTitle("FriendsChat");
-		blog.setUser_id("U002");
+		blog.setUser_id("U5");
 		blog.setStatus('A');
 		blog.setDescription("stay Connected in Free Time");
-		blog.setReason("Connection");
+		blog.setReason("");
 		
 		boolean flag =blogDAO.update(blog);
 		assertEquals("updateBlogTestCase", true,flag);
@@ -69,16 +69,16 @@ public class BlogDAOTestCase {
 	//@Test
 	public void getBlogTestCase()
 	{
-		blog=blogDAO.get("B005");
+		blog=blogDAO.get("B10");
 		assertEquals("getBlogTestCAse",null,blog);
 		
 		
 	}
 	
-	//@Test
+	@Test
 	public void getAllBlogTestCase()
 	{
 		int size=blogDAO.list().size();
-		assertEquals("getBlogTestCase",3,size);
+		assertEquals("getBlogTestCase",5,size);
 	}
 }
